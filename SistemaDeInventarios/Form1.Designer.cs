@@ -36,11 +36,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.btncancelar);
             this.panel1.Controls.Add(this.btnenter);
             this.panel1.Controls.Add(this.txtpass);
@@ -124,6 +126,15 @@
             this.label1.Text = "INICIO DE SESION";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(49, 28);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -150,6 +161,7 @@
         private System.Windows.Forms.Button btnenter;
         private System.Windows.Forms.TextBox txtpass;
         private System.Windows.Forms.TextBox txtusuario;
+        private System.Windows.Forms.Button button1;
     }
 }
 
