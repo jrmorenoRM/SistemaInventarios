@@ -23,7 +23,7 @@ namespace SistemaDeInventarios
             InitializeComponent();
             pro_conexion = p_conexion;
             CargarGrupoPruductos();
-            CargarDetallePruductos();
+            CargarDetalleProductos();
 
 
 
@@ -60,9 +60,15 @@ namespace SistemaDeInventarios
             this.Close();
         }
 
+        private void vIngresoDeProducto_onIngresoGrupo(object sender, EventArgs e)
+        {
+            CargarGrupoPruductos();
+        }
+
         private void PictureBox10_Click(object sender, EventArgs e)
         {
             IngresoDeProducto v_ingresoDeProducto = new IngresoDeProducto(pro_conexion);
+            v_ingresoDeProducto.onIngresoGrupo += v_ingresoDeProducto_onIngresoGrupo;
             v_ingresoDeProducto.ShowDialog();
         }
 
@@ -74,7 +80,13 @@ namespace SistemaDeInventarios
         private void PictureBox1_Click(object sender, EventArgs e)
         {
             wf_Ingreso_Grupos wf_ingreso = new wf_Ingreso_Grupos(pro_conexion);
+          //  wf_ingreso.onIngresoGrupo += v_ingresoDeProducto_onIngresoGrupo;
             wf_ingreso.ShowDialog();
+        }
+
+        private void v_ingresoDeProducto_onIngresoGrupo(object sender, EventArgs e)
+        {
+            CargarDetalleProductos();
         }
 
         private void ComboGrupoSeleccionado_SelectedIndexChanged(object sender, EventArgs e)
@@ -97,31 +109,27 @@ namespace SistemaDeInventarios
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
                
             }
            
         }
 
-        public void CargarDetallePruductos()
+        public void CargarDetalleProductos()
         {
-            string query = @"SELECT * FROM public.view_nombre_productos_detalle()";
+            string query = @"SELECT * FROM public.view_nombre_productos_detalle ()";
             PgSqlCommand pg_comando = new PgSqlCommand(query, pro_conexion);
-
             try
             {
-                ds_detalle_productos.dt_detalle_producto.Clear();
-                new PgSqlDataAdapter(pg_comando).Fill(ds_detalle_productos.dt_detalle_producto); //recomendado para llenar datasets
-
-
+                ds_nombre_producto_detalle.dt_nombre_producto_detalle.Clear();
+                new PgSqlDataAdapter(pg_comando).Fill(ds_nombre_producto_detalle.dt_nombre_producto_detalle);
 
             }
-            catch (Exception ex)
+            catch (Exception eex)
             {
 
-
+              
             }
-
         }
 
         private void ComboNombreProducto_SelectedIndexChanged(object sender, EventArgs e)

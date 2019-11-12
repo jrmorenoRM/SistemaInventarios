@@ -85,6 +85,11 @@
     <Compile Include="ControlDeUsuarios.Designer.cs">
       <DependentUpon>ControlDeUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataSets\ds_detalle_productos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ds_detalle_productos.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSets\ds_grupo_productos.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -159,6 +164,17 @@
     <EmbeddedResource Include="wf_Ingreso_Grupos.resx">
       <DependentUpon>wf_Ingreso_Grupos.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="DataSets\ds_detalle_productos.xsc">
+      <DependentUpon>ds_detalle_productos.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\ds_detalle_productos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ds_detalle_productos.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\ds_detalle_productos.xss">
+      <DependentUpon>ds_detalle_productos.xsd</DependentUpon>
+    </None>
     <None Include="DataSets\ds_grupo_productos.xsc">
       <DependentUpon>ds_grupo_productos.xsd</DependentUpon>
     </None>

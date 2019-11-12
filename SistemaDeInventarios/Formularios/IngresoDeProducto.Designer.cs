@@ -47,7 +47,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(392, 184);
             this.panel1.TabIndex = 0;
-       
             // 
             // button1
             // 
@@ -62,12 +61,12 @@
             // 
             // txtnuevoproducto
             // 
+            this.txtnuevoproducto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtnuevoproducto.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtnuevoproducto.Location = new System.Drawing.Point(65, 92);
             this.txtnuevoproducto.Name = "txtnuevoproducto";
             this.txtnuevoproducto.Size = new System.Drawing.Size(260, 20);
             this.txtnuevoproducto.TabIndex = 2;
-        
             // 
             // label2
             // 
@@ -78,7 +77,6 @@
             this.label2.Size = new System.Drawing.Size(74, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "NOMBRE";
-
             // 
             // label1
             // 
@@ -90,7 +88,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "INGRESO NOMBRE DE NUEVO PRODUCTO";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-    
             // 
             // IngresoDeProducto
             // 

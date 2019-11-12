@@ -1,6 +1,6 @@
 ﻿namespace SistemaDeInventarios
 {
-    partial class IngresoDeProducto
+    partial class wf_Ingreso_Grupos
     {
         /// <summary>
         /// Required designer variable.
@@ -28,46 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.txtnuevoproducto = new System.Windows.Forms.TextBox();
+            this.btn_guardar_grupo = new System.Windows.Forms.Button();
+            this.txt_nuevo_grupo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // btn_guardar_grupo
             // 
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.txtnuevoproducto);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(392, 184);
-            this.panel1.TabIndex = 0;
-       
+            this.btn_guardar_grupo.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_guardar_grupo.Location = new System.Drawing.Point(65, 139);
+            this.btn_guardar_grupo.Name = "btn_guardar_grupo";
+            this.btn_guardar_grupo.Size = new System.Drawing.Size(260, 31);
+            this.btn_guardar_grupo.TabIndex = 3;
+            this.btn_guardar_grupo.Text = "GUARDAR";
+            this.btn_guardar_grupo.UseVisualStyleBackColor = true;
+            this.btn_guardar_grupo.Click += new System.EventHandler(this.Btn_guardar_grupo_Click);
             // 
-            // button1
+            // txt_nuevo_grupo
             // 
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(65, 139);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(260, 31);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "GUARDAR";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
-            // 
-            // txtnuevoproducto
-            // 
-            this.txtnuevoproducto.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtnuevoproducto.Location = new System.Drawing.Point(65, 92);
-            this.txtnuevoproducto.Name = "txtnuevoproducto";
-            this.txtnuevoproducto.Size = new System.Drawing.Size(260, 20);
-            this.txtnuevoproducto.TabIndex = 2;
-        
+            this.txt_nuevo_grupo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txt_nuevo_grupo.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txt_nuevo_grupo.Location = new System.Drawing.Point(65, 92);
+            this.txt_nuevo_grupo.Name = "txt_nuevo_grupo";
+            this.txt_nuevo_grupo.Size = new System.Drawing.Size(260, 20);
+            this.txt_nuevo_grupo.TabIndex = 2;
+            this.txt_nuevo_grupo.TextChanged += new System.EventHandler(this.Txt_nuevo_grupo_TextChanged);
             // 
             // label2
             // 
@@ -78,7 +66,6 @@
             this.label2.Size = new System.Drawing.Size(74, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "NOMBRE";
-
             // 
             // label1
             // 
@@ -86,21 +73,32 @@
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(392, 44);
+            this.label1.Size = new System.Drawing.Size(386, 44);
             this.label1.TabIndex = 0;
-            this.label1.Text = "INGRESO NOMBRE DE NUEVO PRODUCTO";
+            this.label1.Text = "INGRESO NOMBRE DE NUEVO GRUPO";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-    
             // 
-            // IngresoDeProducto
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btn_guardar_grupo);
+            this.panel1.Controls.Add(this.txt_nuevo_grupo);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(386, 201);
+            this.panel1.TabIndex = 1;
+            // 
+            // wf_Ingreso_Grupos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(392, 184);
+            this.ClientSize = new System.Drawing.Size(386, 201);
             this.Controls.Add(this.panel1);
-            this.Name = "IngresoDeProducto";
+            this.Name = "wf_Ingreso_Grupos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "IngresoDeProducto";
+            this.Text = "Form2";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -109,10 +107,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox txtnuevoproducto;
+        private System.Windows.Forms.Button btn_guardar_grupo;
+        private System.Windows.Forms.TextBox txt_nuevo_grupo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel1;
     }
 }

@@ -14,18 +14,21 @@ namespace SistemaDeInventarios
     public partial class IngresoDeProducto : Form
     {
 
-        public PgSqlConnection pro_conexion { get; set; }
+        public PgSqlConnection pro_conexion { get; set; } 
         public IngresoDeProducto(PgSqlConnection p_conexion)
         {
             InitializeComponent();
-            p_conexion = pro_conexion;
+            pro_conexion = p_conexion;
         }
+
+   
 
         private void Button1_Click(object sender, EventArgs e)
         {
+
             string query = @"SELECT * FROM public.ft_insert_nuevo_producto_detalle (
-                                                                            : p_nombre_producto
-                                                                            )";
+                                                                                      :p_nombre_producto
+                                                                                    )";
 
             PgSqlCommand pg_comando = new PgSqlCommand(query, pro_conexion);
             pg_comando.Parameters.Add("p_nombre_producto", PgSqlType.VarChar).Value = txtnuevoproducto.Text; // solo si hay parametros en la funcion sql
@@ -33,8 +36,9 @@ namespace SistemaDeInventarios
             try
             {
                 pg_comando.ExecuteNonQuery(); //executenonquery cuando no necesitamos retornar un valor
-                MessageBox.Show("Producto guardado con exito.");
+                MessageBox.Show("producto guardado con exito.");
                 txtnuevoproducto.Clear();
+            
 
 
             }
@@ -47,9 +51,13 @@ namespace SistemaDeInventarios
             }
 
 
+
         }
+        public event EventHandler onIngresoGrupo;
+        public event EventHandler onIngresoProducto;
     }
 
-     
+
+       
     }
 

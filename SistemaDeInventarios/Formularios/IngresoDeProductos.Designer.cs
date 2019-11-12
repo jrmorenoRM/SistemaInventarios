@@ -33,7 +33,6 @@
             this.comboRecibidoPor = new System.Windows.Forms.ComboBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.comboNombreProducto = new System.Windows.Forms.ComboBox();
-            this.ds_detalle_productos = new SistemaDeInventarios.DataSets.ds_detalle_productos();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.tablaGrupoSeleccionado = new System.Windows.Forms.DataGridView();
@@ -58,10 +57,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.ds_nombre_producto_detalle = new SistemaDeInventarios.DataSets.ds_nombre_producto_detalle();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ds_detalle_productos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablaGrupoSeleccionado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -74,6 +73,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numCantidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ds_grupo_productos1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ds_nombre_producto_detalle)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -151,8 +151,8 @@
             // comboNombreProducto
             // 
             this.comboNombreProducto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.comboNombreProducto.DataSource = this.ds_detalle_productos;
-            this.comboNombreProducto.DisplayMember = "dt_detalle_producto.detalle_nombre_producto";
+            this.comboNombreProducto.DataSource = this.ds_nombre_producto_detalle;
+            this.comboNombreProducto.DisplayMember = "dt_nombre_producto_detalle.detalle_nombre_producto";
             this.comboNombreProducto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboNombreProducto.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.comboNombreProducto.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -161,13 +161,8 @@
             this.comboNombreProducto.Name = "comboNombreProducto";
             this.comboNombreProducto.Size = new System.Drawing.Size(293, 30);
             this.comboNombreProducto.TabIndex = 28;
-            this.comboNombreProducto.ValueMember = "ds_detalle_producto.id_producto_detalle";
+            this.comboNombreProducto.ValueMember = "dt_nombre_producto_detalle.id_producto_detalle";
             this.comboNombreProducto.SelectedIndexChanged += new System.EventHandler(this.ComboNombreProducto_SelectedIndexChanged);
-            // 
-            // ds_detalle_productos
-            // 
-            this.ds_detalle_productos.DataSetName = "ds_detalle_productos";
-            this.ds_detalle_productos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // button2
             // 
@@ -350,6 +345,7 @@
             this.comboGrupoSeleccionado.TabIndex = 8;
             this.comboGrupoSeleccionado.ValueMember = "dt_grupo_productos.id_grupo";
             this.comboGrupoSeleccionado.SelectedIndexChanged += new System.EventHandler(this.ComboGrupoSeleccionado_SelectedIndexChanged);
+            this.comboGrupoSeleccionado.TextChanged += new System.EventHandler(this.ComboBox1_SelectedIndexChanged);
             // 
             // ds_grupo_productos1
             // 
@@ -428,6 +424,11 @@
             this.label1.Text = "INGRESO DE PRODUCTOS A INVENTARIO";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // ds_nombre_producto_detalle
+            // 
+            this.ds_nombre_producto_detalle.DataSetName = "ds_nombre_producto_detalle";
+            this.ds_nombre_producto_detalle.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // IngresoDeProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -443,7 +444,6 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ds_detalle_productos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablaGrupoSeleccionado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
@@ -456,6 +456,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numCantidad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ds_grupo_productos1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ds_nombre_producto_detalle)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -491,6 +492,6 @@
         private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.ComboBox comboNombreProducto;
         private DataSets.ds_grupo_productos ds_grupo_productos1;
-        private DataSets.ds_detalle_productos ds_detalle_productos;
+        private DataSets.ds_nombre_producto_detalle ds_nombre_producto_detalle;
     }
 }
