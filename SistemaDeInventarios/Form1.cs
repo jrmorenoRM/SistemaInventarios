@@ -1,4 +1,5 @@
 ﻿using Devart.Data.PostgreSql;
+using Npgsql;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,52 +15,16 @@ namespace SistemaDeInventarios
 {
     public partial class Form1 : Form
     {
-        private string Pro_BaseDatos
-        {
-            get
-            {
-                return ConfigurationSettings.AppSettings["nombre_bd"];
-            }
-        }
 
-        private string Pro_Usuario
-        {
-            get
-            {
-                return ConfigurationSettings.AppSettings["usser_bd"];
-            }
-        }
 
-        private string Pro_pass
-        {
-            get
-            {
-                return ConfigurationSettings.AppSettings["password_bd"];
-            }
-        }
+        public PgSqlConnection pro_conexion { get; set; }
 
-        private string Pro_host
-        {
-            get
-            {
-                return ConfigurationSettings.AppSettings["host_bd"];
-            }
-        }
 
-        private string Pro_puerto
-        {
-            get
-            {
-                return ConfigurationSettings.AppSettings["puerto_bd"];
-            }
-        }
-
-        PgSqlConnection pgConexion; //variable global conexion
-
-        public Form1()
+        public Form1(PgSqlConnection p_conexion)
         {
             InitializeComponent();
-            Conexion_DB();
+            pro_conexion = p_conexion;
+            
         }
 
         private void Label2_Click(object sender, EventArgs e)
@@ -72,55 +37,62 @@ namespace SistemaDeInventarios
             this.Close();
         }
 
+        
+
         private void Btnenter_Click(object sender, EventArgs e)
         {
 
-              this.Hide();
+            bool v_resultado;
+            string sentencia = @"SELECT * FROM public.ft_login_sistema (
+                                                                        :p_usuario,
+                                                                        :p_contrasena
+                                                                        )";
+             
+            
+            if (pro_conexion.State != ConnectionState.Open)
+            {
+                pro_conexion.Open();
+            }
+
+           
+
+            PgSqlCommand v_comando = new PgSqlCommand(sentencia, pro_conexion);
+            v_comando.Parameters.Add("p_usuario", NpgsqlTypes.NpgsqlDbType.Varchar).Value = txtusuario.Text;
+            v_comando.Parameters.Add("p_contrasena", NpgsqlTypes.NpgsqlDbType.Varchar).Value = txtpass.Text;
+
+            try
+            {
+                v_resultado = Convert.ToBoolean(v_comando.ExecuteScalar());
+
+
+                if (v_resultado)
+                {
+                    MessageBox.Show("Bienvenido");
+                    this.Close();
+                }else
+                {
+                    MessageBox.Show("Error de usuario o contraseña");
+                }
+
+                
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                throw;
+            }
 
 
 
-      
-
-    }
+        }
 
         private void Panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-        public void Conexion_DB()
-        {
-            StringBuilder v_cadena_conexion = new StringBuilder();
-            v_cadena_conexion.Append("User Id=");
-            v_cadena_conexion.Append(Pro_Usuario);
-            v_cadena_conexion.Append(";Password=");
-            v_cadena_conexion.Append(Pro_pass);
-            v_cadena_conexion.Append(";Host=");
-            v_cadena_conexion.Append(Pro_host);
-            v_cadena_conexion.Append(";Database=");
-            v_cadena_conexion.Append(Pro_BaseDatos);
-            v_cadena_conexion.Append(";Port=");
-            v_cadena_conexion.Append(Pro_puerto);
-
-            string v_cadena = v_cadena_conexion.ToString();
-
-            pgConexion = new PgSqlConnection(v_cadena);
-
-            try
-            {
-               
-                if (pgConexion.State != ConnectionState.Open)
-                {
-                    pgConexion.Open();
-                }
-
-
-
-            }
-            catch (Exception e)
-            {
-            }
-        }
+       
 
     }
 

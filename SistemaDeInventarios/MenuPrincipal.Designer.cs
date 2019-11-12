@@ -31,22 +31,21 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuPrincipal));
             this.panelSeleccion = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panelCabecera = new System.Windows.Forms.Panel();
-            this.panelInferior = new System.Windows.Forms.Panel();
-            this.lblfecha = new System.Windows.Forms.Label();
-            this.lblhora = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panelInferior = new System.Windows.Forms.Panel();
+            this.lblfecha = new System.Windows.Forms.Label();
+            this.lblhora = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panelSeleccion.SuspendLayout();
-            this.panelInferior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panelInferior.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelSeleccion
@@ -66,64 +65,6 @@
             this.panelSeleccion.Size = new System.Drawing.Size(297, 747);
             this.panelSeleccion.TabIndex = 0;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(55, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(241, 22);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "SISTEMA DE INVENTARIOS";
-            // 
-            // panelCabecera
-            // 
-            this.panelCabecera.BackColor = System.Drawing.Color.White;
-            this.panelCabecera.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelCabecera.Location = new System.Drawing.Point(297, 0);
-            this.panelCabecera.Name = "panelCabecera";
-            this.panelCabecera.Size = new System.Drawing.Size(879, 48);
-            this.panelCabecera.TabIndex = 1;
-            // 
-            // panelInferior
-            // 
-            this.panelInferior.BackColor = System.Drawing.Color.White;
-            this.panelInferior.Controls.Add(this.lblfecha);
-            this.panelInferior.Controls.Add(this.lblhora);
-            this.panelInferior.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelInferior.Location = new System.Drawing.Point(297, 697);
-            this.panelInferior.Name = "panelInferior";
-            this.panelInferior.Size = new System.Drawing.Size(879, 50);
-            this.panelInferior.TabIndex = 2;
-            // 
-            // lblfecha
-            // 
-            this.lblfecha.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lblfecha.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblfecha.Location = new System.Drawing.Point(96, 0);
-            this.lblfecha.Name = "lblfecha";
-            this.lblfecha.Size = new System.Drawing.Size(783, 50);
-            this.lblfecha.TabIndex = 1;
-            this.lblfecha.Text = "label2";
-            this.lblfecha.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblhora
-            // 
-            this.lblhora.AutoSize = true;
-            this.lblhora.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblhora.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblhora.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.lblhora.Location = new System.Drawing.Point(0, 0);
-            this.lblhora.Name = "lblhora";
-            this.lblhora.Size = new System.Drawing.Size(96, 33);
-            this.lblhora.TabIndex = 0;
-            this.lblhora.Text = "label1";
-            // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
-            // 
             // button6
             // 
             this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -138,6 +79,7 @@
             this.button6.TabIndex = 8;
             this.button6.Text = "       CONTROL DE USUARIOS";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.Button6_Click);
             // 
             // button5
             // 
@@ -216,6 +158,16 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(55, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(241, 22);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "SISTEMA DE INVENTARIOS";
+            // 
             // pictureBox2
             // 
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -227,6 +179,45 @@
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
             // 
+            // panelInferior
+            // 
+            this.panelInferior.BackColor = System.Drawing.Color.White;
+            this.panelInferior.Controls.Add(this.lblfecha);
+            this.panelInferior.Controls.Add(this.lblhora);
+            this.panelInferior.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelInferior.Location = new System.Drawing.Point(297, 697);
+            this.panelInferior.Name = "panelInferior";
+            this.panelInferior.Size = new System.Drawing.Size(879, 50);
+            this.panelInferior.TabIndex = 2;
+            // 
+            // lblfecha
+            // 
+            this.lblfecha.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblfecha.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblfecha.Location = new System.Drawing.Point(96, 0);
+            this.lblfecha.Name = "lblfecha";
+            this.lblfecha.Size = new System.Drawing.Size(783, 50);
+            this.lblfecha.TabIndex = 1;
+            this.lblfecha.Text = "label2";
+            this.lblfecha.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblhora
+            // 
+            this.lblhora.AutoSize = true;
+            this.lblhora.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblhora.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblhora.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.lblhora.Location = new System.Drawing.Point(0, 0);
+            this.lblhora.Name = "lblhora";
+            this.lblhora.Size = new System.Drawing.Size(96, 33);
+            this.lblhora.TabIndex = 0;
+            this.lblhora.Text = "label1";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
+            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -234,7 +225,6 @@
             this.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.ClientSize = new System.Drawing.Size(1176, 747);
             this.Controls.Add(this.panelInferior);
-            this.Controls.Add(this.panelCabecera);
             this.Controls.Add(this.panelSeleccion);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -247,9 +237,9 @@
             this.Load += new System.EventHandler(this.MenuPrincipal_Load);
             this.panelSeleccion.ResumeLayout(false);
             this.panelSeleccion.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelInferior.ResumeLayout(false);
             this.panelInferior.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -257,7 +247,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panelSeleccion;
-        private System.Windows.Forms.Panel panelCabecera;
         private System.Windows.Forms.Panel panelInferior;
         private System.Windows.Forms.Label lblfecha;
         private System.Windows.Forms.Label lblhora;

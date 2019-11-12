@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Devart.Data.PostgreSql;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
@@ -13,9 +14,55 @@ namespace SistemaDeInventarios
 {
     public partial class MenuPrincipal : Form
     {
+
+       
+
+        private string Pro_BaseDatos
+        {
+            get
+            {
+                return ConfigurationSettings.AppSettings["nombre_bd"];
+            }
+        }
+
+        private string Pro_Usuario
+        {
+            get
+            {
+                return ConfigurationSettings.AppSettings["usser_bd"];
+            }
+        }
+
+        private string Pro_pass
+        {
+            get
+            {
+                return ConfigurationSettings.AppSettings["password_bd"];
+            }
+        }
+
+        private string Pro_host
+        {
+            get
+            {
+                return ConfigurationSettings.AppSettings["host_bd"];
+            }
+        }
+
+        private string Pro_puerto
+        {
+            get
+            {
+                return ConfigurationSettings.AppSettings["puerto_bd"];
+            }
+        }
+
+        public PgSqlConnection pgConexion; //variable global conexion
+
         public MenuPrincipal()
         {
             InitializeComponent();
+            Conexion_DB();
 
             TIPOS_AMBIENTE v_tipo_ambiente = (TIPOS_AMBIENTE) Convert.ToInt32(ConfigurationSettings.AppSettings["TIPO_AMBIENTE"]);
             switch (v_tipo_ambiente)
@@ -23,7 +70,7 @@ namespace SistemaDeInventarios
                 case TIPOS_AMBIENTE.PRUEBA:
                     break;
                 case TIPOS_AMBIENTE.PRODUCCION:
-                    Form1 frmLogin = new Form1();
+                    Form1 frmLogin = new Form1(pgConexion);
                     frmLogin.MdiParent = this;
                     frmLogin.Show();
                     break;
@@ -93,10 +140,52 @@ namespace SistemaDeInventarios
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            IngresoDeProductos vingresoDeProductos = new IngresoDeProductos();
+            IngresoDeProductos vingresoDeProductos = new IngresoDeProductos(pgConexion);
             vingresoDeProductos.MdiParent = this;
             vingresoDeProductos.Show();
 
         }
+
+        private void Button6_Click(object sender, EventArgs e)
+        {
+            ControlDeUsuarios v_controldeusuarios = new ControlDeUsuarios();
+            v_controldeusuarios.MdiParent = this;
+            v_controldeusuarios.Show();
+        }
+
+        public void Conexion_DB()
+        {
+            StringBuilder v_cadena_conexion = new StringBuilder();
+            v_cadena_conexion.Append("User Id=");
+            v_cadena_conexion.Append(Pro_Usuario);
+            v_cadena_conexion.Append(";Password=");
+            v_cadena_conexion.Append(Pro_pass);
+            v_cadena_conexion.Append(";Host=");
+            v_cadena_conexion.Append(Pro_host);
+            v_cadena_conexion.Append(";Database=");
+            v_cadena_conexion.Append(Pro_BaseDatos);
+            v_cadena_conexion.Append(";Port=");
+            v_cadena_conexion.Append(Pro_puerto);
+
+            string v_cadena = v_cadena_conexion.ToString();
+
+            pgConexion = new PgSqlConnection(v_cadena);
+
+            try
+            {
+
+                if (pgConexion.State != ConnectionState.Open)
+                {
+                    pgConexion.Open();
+                }
+
+
+
+            }
+            catch (Exception e)
+            {
+            }
+        }
+
     }
 }
