@@ -74,7 +74,17 @@ namespace SistemaDeInventarios
         private void PictureBox1_Click(object sender, EventArgs e)
         {
             wf_Ingreso_Grupos wf_ingreso = new wf_Ingreso_Grupos(pro_conexion);
+            wf_ingreso.on_GrupoAgregado += wf_ingreso_onGrupoAgregado; //asignacion del evento 
             wf_ingreso.ShowDialog();
+        }
+
+        
+
+        private void wf_ingreso_onGrupoAgregado(object sender, EventArgs e)
+        {
+
+            //llamar a la funcion que llena el combo para completar el evento
+            CargarGrupoPruductos(); 
         }
 
         private void ComboGrupoSeleccionado_SelectedIndexChanged(object sender, EventArgs e)
@@ -128,6 +138,8 @@ namespace SistemaDeInventarios
         {
 
         }
+
+
     }
 
 }

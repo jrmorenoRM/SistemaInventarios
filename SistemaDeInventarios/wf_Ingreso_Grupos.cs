@@ -31,7 +31,7 @@ namespace SistemaDeInventarios
         {
             string query = @"SELECT * FROM public.ft_insert_grupo_producto (
                                                                             :p_grupo_producto
-                                                                            )";
+                                                                            )";  
 
             PgSqlCommand pg_comando = new PgSqlCommand(query, pro_conexion);
             pg_comando.Parameters.Add("p_grupo_producto",PgSqlType.VarChar).Value = txt_nuevo_grupo.Text; // solo si hay parametros en la funcion sql
@@ -41,7 +41,7 @@ namespace SistemaDeInventarios
                 pg_comando.ExecuteNonQuery(); //executenonquery cuando no necesitamos retornar un valor
                 MessageBox.Show("Grupo guardado con exito.");
                 txt_nuevo_grupo.Clear();
-
+                on_GrupoAgregado?.Invoke(new object(),new EventArgs());  //invocacion del evento
 
             }
             catch (Exception ex)
@@ -52,7 +52,16 @@ namespace SistemaDeInventarios
                
             }
 
-
+           
         }
+
+
+        #region EVENTOS
+
+        public event EventHandler on_GrupoAgregado;
+
+
+        #endregion
+
     }
 }

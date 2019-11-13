@@ -19,6 +19,7 @@ namespace SistemaDeInventarios
         {
             InitializeComponent();
             p_conexion = pro_conexion;
+           
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -48,8 +49,11 @@ namespace SistemaDeInventarios
 
 
         }
+        
+
+
     }
 
-     
-    }
+
+}
 
