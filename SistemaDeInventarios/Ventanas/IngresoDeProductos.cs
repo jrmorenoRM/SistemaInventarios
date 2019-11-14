@@ -27,8 +27,7 @@ namespace SistemaDeInventarios
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            //Asi lo saca JR el valor del combo
-           // comboGrupoSeleccionado.SelectedValue;
+           
         }
 
         private void Panel1_Paint(object sender, PaintEventArgs e)

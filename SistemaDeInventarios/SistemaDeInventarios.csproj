@@ -79,10 +79,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ControlDeUsuarios.cs">
+    <Compile Include="Ventanas\ControlDeUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ControlDeUsuarios.Designer.cs">
+    <Compile Include="Ventanas\ControlDeUsuarios.Designer.cs">
       <DependentUpon>ControlDeUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="DataSets\ds_detalle_productos.Designer.cs">
@@ -95,51 +95,51 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ds_grupo_productos.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="Ventanas\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="Ventanas\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="wf_Ingreso_Grupos.cs">
+    <Compile Include="Ventanas\wf_Ingreso_Grupos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="wf_Ingreso_Grupos.Designer.cs">
+    <Compile Include="Ventanas\wf_Ingreso_Grupos.Designer.cs">
       <DependentUpon>wf_Ingreso_Grupos.cs</DependentUpon>
     </Compile>
-    <Compile Include="IngresoDeProductos.cs">
+    <Compile Include="Ventanas\IngresoDeProductos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="IngresoDeProductos.Designer.cs">
+    <Compile Include="Ventanas\IngresoDeProductos.Designer.cs">
       <DependentUpon>IngresoDeProductos.cs</DependentUpon>
     </Compile>
-    <Compile Include="ListadoDeUsuarios.cs">
+    <Compile Include="Ventanas\ListadoDeUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ListadoDeUsuarios.Designer.cs">
+    <Compile Include="Ventanas\ListadoDeUsuarios.Designer.cs">
       <DependentUpon>ListadoDeUsuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuPrincipal.cs">
+    <Compile Include="Ventanas\MenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenuPrincipal.Designer.cs">
+    <Compile Include="Ventanas\MenuPrincipal.Designer.cs">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ControlDeUsuarios.resx">
+    <EmbeddedResource Include="Ventanas\ControlDeUsuarios.resx">
       <DependentUpon>ControlDeUsuarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
+    <EmbeddedResource Include="Ventanas\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="IngresoDeProductos.resx">
+    <EmbeddedResource Include="Ventanas\IngresoDeProductos.resx">
       <DependentUpon>IngresoDeProductos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ListadoDeUsuarios.resx">
+    <EmbeddedResource Include="Ventanas\ListadoDeUsuarios.resx">
       <DependentUpon>ListadoDeUsuarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuPrincipal.resx">
+    <EmbeddedResource Include="Ventanas\MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -152,7 +152,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="wf_Ingreso_Grupos.resx">
+    <EmbeddedResource Include="Ventanas\wf_Ingreso_Grupos.resx">
       <DependentUpon>wf_Ingreso_Grupos.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="DataSets\ds_detalle_productos.xsc">
@@ -260,5 +260,6 @@
   <ItemGroup>
     <None Include="Resources\SISETMA DE USUARIOS.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

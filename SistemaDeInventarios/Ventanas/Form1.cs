@@ -39,6 +39,7 @@ namespace SistemaDeInventarios
 
         
 
+
         private void Btnenter_Click(object sender, EventArgs e)
         {
 
