@@ -17,22 +17,18 @@ namespace SistemaDeInventarios
 
         public PgSqlConnection pro_conexion { get; set; }
 
-
+        
         public IngresoDeProductos(PgSqlConnection p_conexion)
         {
             InitializeComponent();
             pro_conexion = p_conexion;
             CargarGrupoPruductos();
-            CargarDetallePruductos();
-
-
-
-
         }
 
         private void Button1_Click(object sender, EventArgs e)
         {
-          
+            //Asi lo saca JR el valor del combo
+           // comboGrupoSeleccionado.SelectedValue;
         }
 
         private void Panel1_Paint(object sender, PaintEventArgs e)
@@ -62,14 +58,49 @@ namespace SistemaDeInventarios
 
         private void PictureBox10_Click(object sender, EventArgs e)
         {
-            IngresoDeProducto v_ingresoDeProducto = new IngresoDeProducto(pro_conexion);
-            v_ingresoDeProducto.ShowDialog();
+            
         }
 
         private void Button1_Click_1(object sender, EventArgs e)
         {
 
+
+
+            int combodetalleproducto = (int)comboGrupoSeleccionado.SelectedValue;  //extraer id de combobox de detalle con "Selectedvalue"
+
+
+            string query = @"SELECT * FROM public.ft_insert_nuevo_producto_detalle (
+                                                                                    :p_nombre_producto,
+                                                                                    :p_id_de_grupo 
+                                                                                   )";
+
+            PgSqlCommand pg_comando = new PgSqlCommand(query, pro_conexion);
+            pg_comando.Parameters.Add("p_id_de_grupo", PgSqlType.Int).Value = combodetalleproducto;
+            pg_comando.Parameters.Add("p_nombre_producto", PgSqlType.VarChar).Value = txt_nombre_nuevo_producto.Text; // solo si hay parametros en la funcion sql
+                   
+            try
+                   {
+                       pg_comando.ExecuteNonQuery(); //executenonquery cuando no necesitamos retornar un valor
+                       MessageBox.Show("Producto guardado con exito.");
+                       txt_nombre_nuevo_producto.Clear();
+
+
+
+                   }
+                   catch (Exception ex)
+
+                   {
+
+                       MessageBox.Show(ex.Message);
+
+                   }
+
+       
+
         }
+
+
+
 
         private void PictureBox1_Click(object sender, EventArgs e)
         {
@@ -113,31 +144,7 @@ namespace SistemaDeInventarios
            
         }
 
-        public void CargarDetallePruductos()
-        {
-            string query = @"SELECT * FROM public.view_nombre_productos_detalle()";
-            PgSqlCommand pg_comando = new PgSqlCommand(query, pro_conexion);
-
-            try
-            {
-                ds_detalle_productos.dt_detalle_producto.Clear();
-                new PgSqlDataAdapter(pg_comando).Fill(ds_detalle_productos.dt_detalle_producto); //recomendado para llenar datasets
-
-
-
-            }
-            catch (Exception ex)
-            {
-
-
-            }
-
-        }
-
-        private void ComboNombreProducto_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+        
 
 
     }
