@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.ds_detalle_productos = new SistemaDeInventarios.DataSets.ds_detalle_productos();
+            this.txt_nombre_nuevo_producto = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.tablaGrupoSeleccionado = new System.Windows.Forms.DataGridView();
@@ -46,9 +46,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txt_nombre_nuevo_producto = new System.Windows.Forms.TextBox();
+            this.ds_detalle_productos = new SistemaDeInventarios.DataSets.ds_detalle_productos();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ds_detalle_productos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablaGrupoSeleccionado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -59,6 +58,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ds_grupo_productos1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ds_detalle_productos)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -87,10 +87,13 @@
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel1_Paint);
             // 
-            // ds_detalle_productos
+            // txt_nombre_nuevo_producto
             // 
-            this.ds_detalle_productos.DataSetName = "ds_detalle_productos";
-            this.ds_detalle_productos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.txt_nombre_nuevo_producto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txt_nombre_nuevo_producto.Location = new System.Drawing.Point(297, 163);
+            this.txt_nombre_nuevo_producto.Name = "txt_nombre_nuevo_producto";
+            this.txt_nombre_nuevo_producto.Size = new System.Drawing.Size(293, 20);
+            this.txt_nombre_nuevo_producto.TabIndex = 30;
             // 
             // button2
             // 
@@ -264,12 +267,10 @@
             this.label1.Text = "INGRESO DE PRODUCTOS A INVENTARIO";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // txt_nombre_nuevo_producto
+            // ds_detalle_productos
             // 
-            this.txt_nombre_nuevo_producto.Location = new System.Drawing.Point(297, 163);
-            this.txt_nombre_nuevo_producto.Name = "txt_nombre_nuevo_producto";
-            this.txt_nombre_nuevo_producto.Size = new System.Drawing.Size(293, 20);
-            this.txt_nombre_nuevo_producto.TabIndex = 30;
+            this.ds_detalle_productos.DataSetName = "ds_detalle_productos";
+            this.ds_detalle_productos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // IngresoDeProductos
             // 
@@ -284,7 +285,6 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ds_detalle_productos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablaGrupoSeleccionado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
@@ -295,6 +295,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ds_grupo_productos1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ds_detalle_productos)).EndInit();
             this.ResumeLayout(false);
 
         }

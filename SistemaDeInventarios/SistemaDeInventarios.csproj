@@ -101,6 +101,12 @@
     <Compile Include="Ventanas\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ventanas\wf_crear nuevo_proveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventanas\wf_crear nuevo_proveedor.Designer.cs">
+      <DependentUpon>wf_crear nuevo_proveedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ventanas\wf_Ingreso_Grupos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +158,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Ventanas\wf_crear nuevo_proveedor.resx">
+      <DependentUpon>wf_crear nuevo_proveedor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ventanas\wf_Ingreso_Grupos.resx">
       <DependentUpon>wf_Ingreso_Grupos.cs</DependentUpon>
     </EmbeddedResource>

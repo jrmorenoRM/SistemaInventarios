@@ -43,6 +43,7 @@
             this.lblfecha = new System.Windows.Forms.Label();
             this.lblhora = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.button7 = new System.Windows.Forms.Button();
             this.panelSeleccion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelInferior.SuspendLayout();
@@ -51,11 +52,12 @@
             // panelSeleccion
             // 
             this.panelSeleccion.BackColor = System.Drawing.Color.White;
+            this.panelSeleccion.Controls.Add(this.button7);
             this.panelSeleccion.Controls.Add(this.button6);
             this.panelSeleccion.Controls.Add(this.button5);
+            this.panelSeleccion.Controls.Add(this.button2);
             this.panelSeleccion.Controls.Add(this.button4);
             this.panelSeleccion.Controls.Add(this.button3);
-            this.panelSeleccion.Controls.Add(this.button2);
             this.panelSeleccion.Controls.Add(this.button1);
             this.panelSeleccion.Controls.Add(this.label1);
             this.panelSeleccion.Controls.Add(this.pictureBox2);
@@ -73,7 +75,7 @@
             this.button6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.Image = global::SistemaDeInventarios.Properties.Resources.SISETMA_DE_USUARIOS;
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(6, 625);
+            this.button6.Location = new System.Drawing.Point(1, 536);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(293, 69);
             this.button6.TabIndex = 8;
@@ -89,7 +91,7 @@
             this.button5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.Image = global::SistemaDeInventarios.Properties.Resources.stock;
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(0, 520);
+            this.button5.Location = new System.Drawing.Point(-1, 440);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(293, 69);
             this.button5.TabIndex = 7;
@@ -104,7 +106,7 @@
             this.button4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.Image = global::SistemaDeInventarios.Properties.Resources.busqueda_item;
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(1, 339);
+            this.button4.Location = new System.Drawing.Point(4, 631);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(293, 63);
             this.button4.TabIndex = 6;
@@ -119,7 +121,7 @@
             this.button3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Image = global::SistemaDeInventarios.Properties.Resources.kardex;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(0, 432);
+            this.button3.Location = new System.Drawing.Point(-1, 351);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(293, 62);
             this.button3.TabIndex = 5;
@@ -135,7 +137,7 @@
             this.button2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Image = global::SistemaDeInventarios.Properties.Resources.egresar_item;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(3, 238);
+            this.button2.Location = new System.Drawing.Point(4, 259);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(293, 66);
             this.button2.TabIndex = 4;
@@ -150,11 +152,11 @@
             this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = global::SistemaDeInventarios.Properties.Resources.agregar_item;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(4, 145);
+            this.button1.Location = new System.Drawing.Point(3, 87);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(290, 63);
             this.button1.TabIndex = 3;
-            this.button1.Text = "INGRESO DE PRODUCTOS";
+            this.button1.Text = "CREAR NUEVOS PRODUCTOS";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
@@ -218,6 +220,21 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
+            // button7
+            // 
+            this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.Image = global::SistemaDeInventarios.Properties.Resources.SISETMA_DE_USUARIOS;
+            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button7.Location = new System.Drawing.Point(4, 167);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(293, 69);
+            this.button7.TabIndex = 9;
+            this.button7.Text = "         CREAR NUEVO PROVEEDOR";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -259,5 +276,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
     }
 }
