@@ -31,11 +31,12 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuPrincipal));
             this.panelSeleccion = new System.Windows.Forms.Panel();
+            this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -43,7 +44,6 @@
             this.lblfecha = new System.Windows.Forms.Label();
             this.lblhora = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.button7 = new System.Windows.Forms.Button();
             this.panelSeleccion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelInferior.SuspendLayout();
@@ -66,6 +66,21 @@
             this.panelSeleccion.Name = "panelSeleccion";
             this.panelSeleccion.Size = new System.Drawing.Size(297, 747);
             this.panelSeleccion.TabIndex = 0;
+            // 
+            // button7
+            // 
+            this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.Image = global::SistemaDeInventarios.Properties.Resources.SISETMA_DE_USUARIOS;
+            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button7.Location = new System.Drawing.Point(4, 167);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(293, 69);
+            this.button7.TabIndex = 9;
+            this.button7.Text = "         CREAR NUEVO PROVEEDOR";
+            this.button7.UseVisualStyleBackColor = true;
             // 
             // button6
             // 
@@ -98,6 +113,21 @@
             this.button5.Text = "INVENTARIO";
             this.button5.UseVisualStyleBackColor = true;
             // 
+            // button2
+            // 
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Image = global::SistemaDeInventarios.Properties.Resources.egresar_item;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(4, 259);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(293, 66);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "EGRESO DE PRODUCTOS";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // button4
             // 
             this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -128,21 +158,6 @@
             this.button3.Text = "KARDEX";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.Button3_Click);
-            // 
-            // button2
-            // 
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Image = global::SistemaDeInventarios.Properties.Resources.egresar_item;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(4, 259);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(293, 66);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "EGRESO DE PRODUCTOS";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
@@ -219,21 +234,6 @@
             // 
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
-            // 
-            // button7
-            // 
-            this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Image = global::SistemaDeInventarios.Properties.Resources.SISETMA_DE_USUARIOS;
-            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.Location = new System.Drawing.Point(4, 167);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(293, 69);
-            this.button7.TabIndex = 9;
-            this.button7.Text = "         CREAR NUEVO PROVEEDOR";
-            this.button7.UseVisualStyleBackColor = true;
             // 
             // MenuPrincipal
             // 

@@ -14,7 +14,6 @@ namespace SistemaDeInventarios
     public partial class IngresoDeProductos : Form
     {
 
-
         public PgSqlConnection pro_conexion { get; set; }
 
         
@@ -63,8 +62,6 @@ namespace SistemaDeInventarios
         private void Button1_Click_1(object sender, EventArgs e)
         {
 
-
-
             int combodetalleproducto = (int)comboGrupoSeleccionado.SelectedValue;  //extraer id de combobox de detalle con "Selectedvalue"
 
 
@@ -83,9 +80,7 @@ namespace SistemaDeInventarios
                        MessageBox.Show("Producto guardado con exito.");
                        txt_nombre_nuevo_producto.Clear();
 
-
-
-                   }
+                    }
                    catch (Exception ex)
 
                    {
@@ -93,9 +88,6 @@ namespace SistemaDeInventarios
                        MessageBox.Show(ex.Message);
 
                    }
-
-       
-
         }
 
 
@@ -142,9 +134,6 @@ namespace SistemaDeInventarios
             }
            
         }
-
-        
-
 
     }
 
