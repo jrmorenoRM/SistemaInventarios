@@ -79,6 +79,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataSets\ds_detalle_proveedores.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ds_detalle_proveedores.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Ventanas\ControlDeUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,11 +106,11 @@
     <Compile Include="Ventanas\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ventanas\wf_crear nuevo_proveedor.cs">
+    <Compile Include="Ventanas\wf_crear_nuevo_proveedor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ventanas\wf_crear nuevo_proveedor.Designer.cs">
-      <DependentUpon>wf_crear nuevo_proveedor.cs</DependentUpon>
+    <Compile Include="Ventanas\wf_crear_nuevo_proveedor.Designer.cs">
+      <DependentUpon>wf_crear_nuevo_proveedor.cs</DependentUpon>
     </Compile>
     <Compile Include="Ventanas\wf_Ingreso_Grupos.cs">
       <SubType>Form</SubType>
@@ -133,6 +138,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Ventanas\wf_insertar_nuevo_proveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventanas\wf_insertar_nuevo_proveedor.Designer.cs">
+      <DependentUpon>wf_insertar_nuevo_proveedor.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Ventanas\ControlDeUsuarios.resx">
       <DependentUpon>ControlDeUsuarios.cs</DependentUpon>
     </EmbeddedResource>
@@ -158,11 +169,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Ventanas\wf_crear nuevo_proveedor.resx">
-      <DependentUpon>wf_crear nuevo_proveedor.cs</DependentUpon>
+    <EmbeddedResource Include="Ventanas\wf_crear_nuevo_proveedor.resx">
+      <DependentUpon>wf_crear_nuevo_proveedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventanas\wf_Ingreso_Grupos.resx">
       <DependentUpon>wf_Ingreso_Grupos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventanas\wf_insertar_nuevo_proveedor.resx">
+      <DependentUpon>wf_insertar_nuevo_proveedor.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="DataSets\ds_detalle_productos.xsc">
       <DependentUpon>ds_detalle_productos.xsd</DependentUpon>
@@ -174,6 +188,17 @@
     </None>
     <None Include="DataSets\ds_detalle_productos.xss">
       <DependentUpon>ds_detalle_productos.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\ds_detalle_proveedores.xsc">
+      <DependentUpon>ds_detalle_proveedores.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\ds_detalle_proveedores.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ds_detalle_proveedores.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\ds_detalle_proveedores.xss">
+      <DependentUpon>ds_detalle_proveedores.xsd</DependentUpon>
     </None>
     <None Include="DataSets\ds_grupo_productos.xsc">
       <DependentUpon>ds_grupo_productos.xsd</DependentUpon>

@@ -1,4 +1,5 @@
 ﻿using Devart.Data.PostgreSql;
+using SistemaDeInventarios.Ventanas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -187,5 +188,13 @@ namespace SistemaDeInventarios
             }
         }
 
+        private void button7_Click(object sender, EventArgs e)
+        {
+
+            wf_crear_nuevo_proveedor v_controldeusuarios = new wf_crear_nuevo_proveedor(pgConexion);
+            v_controldeusuarios.MdiParent = this;
+            v_controldeusuarios.Show();
+
+        }
     }
 }

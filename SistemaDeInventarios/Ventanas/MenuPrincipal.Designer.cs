@@ -81,6 +81,7 @@
             this.button7.TabIndex = 9;
             this.button7.Text = "         CREAR NUEVO PROVEEDOR";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button6
             // 
@@ -167,7 +168,7 @@
             this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = global::SistemaDeInventarios.Properties.Resources.agregar_item;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(3, 87);
+            this.button1.Location = new System.Drawing.Point(4, 83);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(290, 63);
             this.button1.TabIndex = 3;

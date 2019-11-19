@@ -135,6 +135,10 @@ namespace SistemaDeInventarios
            
         }
 
+        private void tablaGrupoSeleccionado_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 
 }
