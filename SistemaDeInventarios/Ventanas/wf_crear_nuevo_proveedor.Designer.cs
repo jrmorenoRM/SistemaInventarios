@@ -156,6 +156,7 @@
             this.button2.Text = "CANCELAR";
             this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // button1
             // 
@@ -168,7 +169,6 @@
             this.button1.Text = "GUARDAR\r\n";
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // comboProveedor
             // 
@@ -184,7 +184,6 @@
             this.comboProveedor.Size = new System.Drawing.Size(293, 30);
             this.comboProveedor.TabIndex = 33;
             this.comboProveedor.ValueMember = "dt_detalle_producto.id_proveedor_detalle";
-            this.comboProveedor.SelectedIndexChanged += new System.EventHandler(this.comboProveedor_SelectedIndexChanged);
             // 
             // ds_detalle_proveedores
             // 
@@ -221,7 +220,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "PROVEEDORES";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // wf_crear_nuevo_proveedor
             // 

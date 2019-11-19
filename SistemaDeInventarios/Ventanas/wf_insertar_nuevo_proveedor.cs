@@ -14,13 +14,20 @@ namespace SistemaDeInventarios.Ventanas
     public partial class wf_insertar_nuevo_proveedor : Form
     {
 
-        public PgSqlConnection pro_conexion { get; set; }
-        public wf_insertar_nuevo_proveedor(PgSqlConnection p_conexion)
+    public wf_insertar_nuevo_proveedor(PgSqlConnection p_conexion)
         {
             InitializeComponent();
             pro_conexion = p_conexion;
         }
 
+        #region EVENTOS
+
+        public event EventHandler on_ProveedorAgregado; //evento personalizado
+
+
+        #endregion
+
+        #region BOTONES
         private void btn_guardar_grupo_Click(object sender, EventArgs e)
         {
             string query = @"SELECT * FROM public.ft_insert_nuevo_proveedor (
@@ -35,7 +42,7 @@ namespace SistemaDeInventarios.Ventanas
                 pg_comando.ExecuteNonQuery(); //executenonquery cuando no necesitamos retornar un valor
                 MessageBox.Show("Proveedor guardado con exito.");
                 txt_nuevo_proveeor.Clear();
-                //on_GrupoAgregado?.Invoke(new object(), new EventArgs());  //invocacion del evento
+                on_ProveedorAgregado?.Invoke(new object(), new EventArgs());  //invocacion del evento personalizado
 
             }
             catch (Exception ex)
@@ -46,5 +53,14 @@ namespace SistemaDeInventarios.Ventanas
 
             }
         }
+
+
+        #endregion
+
+        #region PROPIEDADES
+        public PgSqlConnection pro_conexion { get; set; }
+
+        #endregion
+
     }
 }

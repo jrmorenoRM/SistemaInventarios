@@ -14,23 +14,22 @@ namespace SistemaDeInventarios.Ventanas
     public partial class wf_crear_nuevo_proveedor : Form
     {
 
-        public PgSqlConnection pro_conexion { get; set; }
-
-        public wf_crear_nuevo_proveedor(PgSqlConnection p_conexion)
+    public wf_crear_nuevo_proveedor(PgSqlConnection p_conexion)
         {
             InitializeComponent();
             pro_conexion = p_conexion;
             CargarDetalleProveedores();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+
+
+        #region FUNCIONES
+
+        private void wf_ingreso_onProveedorAgreg(object sender, EventArgs e)
         {
 
-        }
-
-        private void comboProveedor_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            //llamar a la funcion que llena el combo para completar el evento personalizado
+            CargarDetalleProveedores();
         }
 
         public void CargarDetalleProveedores()
@@ -53,17 +52,34 @@ namespace SistemaDeInventarios.Ventanas
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
+        #endregion
 
-        }
-
+        #region BOTONES
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             wf_insertar_nuevo_proveedor inp = new wf_insertar_nuevo_proveedor(pro_conexion);
+            inp.on_ProveedorAgregado += wf_ingreso_onProveedorAgreg; //EVENTO PERSONALIZADO
             inp.ShowDialog();
 
 
         }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+
+        }
+
+
+        #endregion
+
+        #region PROPIEDADES
+        public PgSqlConnection pro_conexion { get; set; }
+
+
+
+        #endregion
+
+        
     }
 }

@@ -79,7 +79,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(1215, 36);
             this.label1.TabIndex = 0;
-            this.label1.Text = "INGRESO DE PRODUCTOS A INVENTARIO";
+            this.label1.Text = "REGISTRO DE PRODUCTOS";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // pictureBox3
