@@ -52,6 +52,20 @@ namespace SistemaDeInventarios.Ventanas
                 MessageBox.Show(ex.Message);
 
             }
+            DialogResult result = MessageBox.Show("¿DESEA AGREGAR OTRO PROVEEDOR?", "SALIR", MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.Yes)
+            {
+                
+            }
+            else if (result == DialogResult.No)
+            {
+                this.Close(); 
+            }
+            
+
+
+
         }
 
 

@@ -55,6 +55,8 @@ namespace SistemaDeInventarios.Ventanas
         #endregion
 
         #region BOTONES
+
+        #region EVENTO Y BOTON MAS
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             wf_insertar_nuevo_proveedor inp = new wf_insertar_nuevo_proveedor(pro_conexion);
@@ -64,11 +66,64 @@ namespace SistemaDeInventarios.Ventanas
 
         }
 
+        #endregion
+
+        #region CERRAR
+
         private void button2_Click_1(object sender, EventArgs e)
         {
             this.Close();
 
         }
+
+        #endregion
+
+
+        #region GUARDAR
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int v_comboproveedores = (int)comboProveedor.SelectedValue;
+
+
+            string query = @"SELECT * FROM public.ft_insert_agregar_nuevo_detalle_proveedor (
+                                                                                               :p_nombre_contacto,
+                                                                                               :p_id_proveedor,
+                                                                                               :p_correo_electronico_proveedor,
+                                                                                               :p_numero_cel,
+                                                                                               :p_numero_tel 
+                                                                                             )";
+
+            PgSqlCommand pg_comando = new PgSqlCommand(query, pro_conexion);
+
+            pg_comando.Parameters.Add("p_id_proveedor", PgSqlType.Int).Value = v_comboproveedores;
+            pg_comando.Parameters.Add("p_nombre_contacto", PgSqlType.VarChar).Value = txt_nombre_contacto.Text;
+            pg_comando.Parameters.Add("p_correo_electronico_proveedor", PgSqlType.VarChar).Value = txt_correo_electronico.Text;
+            pg_comando.Parameters.Add("p_numero_cel", PgSqlType.VarChar).Value = txt_numero_celular.Text;
+            pg_comando.Parameters.Add("p_numero_tel", PgSqlType.VarChar).Value = txt_numero_telefono.Text;
+
+            try
+            {
+                pg_comando.ExecuteNonQuery();
+                MessageBox.Show("NUEVO PROVEEDOR AGREGADO.");
+                txt_nombre_contacto.Clear();
+                txt_correo_electronico.Clear();
+                txt_numero_celular.Clear();
+                txt_numero_telefono.Clear();
+
+            }
+            catch (Exception ex)
+
+            {
+
+                MessageBox.Show(ex.Message);
+
+            };
+        }
+
+
+        #endregion
+
 
 
         #endregion
@@ -78,8 +133,8 @@ namespace SistemaDeInventarios.Ventanas
 
 
 
+
         #endregion
 
-        
     }
 }

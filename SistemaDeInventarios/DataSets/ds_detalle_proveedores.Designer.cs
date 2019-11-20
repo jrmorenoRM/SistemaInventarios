@@ -369,7 +369,7 @@ namespace SistemaDeInventarios.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public dt_detalle_productoRow Adddt_detalle_productoRow(string id_proveedor_detalle, string nombre_proveedor_detalle) {
+            public dt_detalle_productoRow Adddt_detalle_productoRow(int id_proveedor_detalle, string nombre_proveedor_detalle) {
                 dt_detalle_productoRow rowdt_detalle_productoRow = ((dt_detalle_productoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id_proveedor_detalle,
@@ -403,7 +403,7 @@ namespace SistemaDeInventarios.DataSets {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnid_proveedor_detalle = new global::System.Data.DataColumn("id_proveedor_detalle", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnid_proveedor_detalle = new global::System.Data.DataColumn("id_proveedor_detalle", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid_proveedor_detalle);
                 this.columnnombre_proveedor_detalle = new global::System.Data.DataColumn("nombre_proveedor_detalle", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnnombre_proveedor_detalle);
@@ -549,10 +549,10 @@ namespace SistemaDeInventarios.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string id_proveedor_detalle {
+            public int id_proveedor_detalle {
                 get {
                     try {
-                        return ((string)(this[this.tabledt_detalle_producto.id_proveedor_detalleColumn]));
+                        return ((int)(this[this.tabledt_detalle_producto.id_proveedor_detalleColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'id_proveedor_detalle\' de la tabla \'dt_detalle_producto\' e" +

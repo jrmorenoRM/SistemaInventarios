@@ -83,8 +83,9 @@
             this.Controls.Add(this.btn_guardar_grupo);
             this.Controls.Add(this.txt_nuevo_proveeor);
             this.Controls.Add(this.label2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "wf_insertar_nuevo_proveedor";
-            this.Text = "wf_insertar_nuevo_proveedor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.ResumeLayout(false);
             this.PerformLayout();
 

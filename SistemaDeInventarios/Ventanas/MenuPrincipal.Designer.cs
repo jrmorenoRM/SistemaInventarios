@@ -39,13 +39,11 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelInferior = new System.Windows.Forms.Panel();
             this.lblfecha = new System.Windows.Forms.Label();
             this.lblhora = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panelSeleccion.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelInferior.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,7 +58,6 @@
             this.panelSeleccion.Controls.Add(this.button3);
             this.panelSeleccion.Controls.Add(this.button1);
             this.panelSeleccion.Controls.Add(this.label1);
-            this.panelSeleccion.Controls.Add(this.pictureBox2);
             this.panelSeleccion.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSeleccion.Location = new System.Drawing.Point(0, 0);
             this.panelSeleccion.Name = "panelSeleccion";
@@ -178,24 +175,14 @@
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(55, 9);
+            this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(241, 22);
+            this.label1.Size = new System.Drawing.Size(297, 22);
             this.label1.TabIndex = 2;
             this.label1.Text = "SISTEMA DE INVENTARIOS";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Image = global::SistemaDeInventarios.Properties.Resources._12;
-            this.pictureBox2.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(56, 44);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // panelInferior
             // 
@@ -254,8 +241,6 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MenuPrincipal_FormClosed);
             this.Load += new System.EventHandler(this.MenuPrincipal_Load);
             this.panelSeleccion.ResumeLayout(false);
-            this.panelSeleccion.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelInferior.ResumeLayout(false);
             this.panelInferior.PerformLayout();
             this.ResumeLayout(false);
@@ -269,7 +254,6 @@
         private System.Windows.Forms.Label lblfecha;
         private System.Windows.Forms.Label lblhora;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;

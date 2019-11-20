@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txt_numero_telefono = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txt_numero_celular = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_correo_electronico = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txt_nombre_nuevo_producto = new System.Windows.Forms.TextBox();
+            this.txt_nombre_contacto = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.comboProveedor = new System.Windows.Forms.ComboBox();
@@ -51,14 +51,14 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.txt_numero_telefono);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.txt_numero_celular);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txt_correo_electronico);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.txt_nombre_nuevo_producto);
+            this.panel1.Controls.Add(this.txt_nombre_contacto);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.comboProveedor);
@@ -71,13 +71,12 @@
             this.panel1.Size = new System.Drawing.Size(625, 436);
             this.panel1.TabIndex = 0;
             // 
-            // textBox3
+            // txt_numero_telefono
             // 
-            this.textBox3.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox3.Location = new System.Drawing.Point(277, 255);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(293, 20);
-            this.textBox3.TabIndex = 43;
+            this.txt_numero_telefono.Location = new System.Drawing.Point(277, 255);
+            this.txt_numero_telefono.Name = "txt_numero_telefono";
+            this.txt_numero_telefono.Size = new System.Drawing.Size(293, 20);
+            this.txt_numero_telefono.TabIndex = 43;
             // 
             // label5
             // 
@@ -89,13 +88,12 @@
             this.label5.TabIndex = 42;
             this.label5.Text = "NUMERO TELEFONO:";
             // 
-            // textBox2
+            // txt_numero_celular
             // 
-            this.textBox2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox2.Location = new System.Drawing.Point(277, 206);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(293, 20);
-            this.textBox2.TabIndex = 41;
+            this.txt_numero_celular.Location = new System.Drawing.Point(277, 206);
+            this.txt_numero_celular.Name = "txt_numero_celular";
+            this.txt_numero_celular.Size = new System.Drawing.Size(293, 20);
+            this.txt_numero_celular.TabIndex = 41;
             // 
             // label4
             // 
@@ -107,13 +105,12 @@
             this.label4.TabIndex = 40;
             this.label4.Text = "NUMERO CELULAR:";
             // 
-            // textBox1
+            // txt_correo_electronico
             // 
-            this.textBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox1.Location = new System.Drawing.Point(277, 154);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(293, 20);
-            this.textBox1.TabIndex = 39;
+            this.txt_correo_electronico.Location = new System.Drawing.Point(277, 154);
+            this.txt_correo_electronico.Name = "txt_correo_electronico";
+            this.txt_correo_electronico.Size = new System.Drawing.Size(293, 20);
+            this.txt_correo_electronico.TabIndex = 39;
             // 
             // label3
             // 
@@ -137,13 +134,13 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // txt_nombre_nuevo_producto
+            // txt_nombre_contacto
             // 
-            this.txt_nombre_nuevo_producto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txt_nombre_nuevo_producto.Location = new System.Drawing.Point(277, 61);
-            this.txt_nombre_nuevo_producto.Name = "txt_nombre_nuevo_producto";
-            this.txt_nombre_nuevo_producto.Size = new System.Drawing.Size(293, 20);
-            this.txt_nombre_nuevo_producto.TabIndex = 36;
+            this.txt_nombre_contacto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txt_nombre_contacto.Location = new System.Drawing.Point(277, 61);
+            this.txt_nombre_contacto.Name = "txt_nombre_contacto";
+            this.txt_nombre_contacto.Size = new System.Drawing.Size(293, 20);
+            this.txt_nombre_contacto.TabIndex = 36;
             // 
             // button2
             // 
@@ -169,12 +166,14 @@
             this.button1.Text = "GUARDAR\r\n";
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // comboProveedor
             // 
             this.comboProveedor.Cursor = System.Windows.Forms.Cursors.Hand;
             this.comboProveedor.DataSource = this.ds_detalle_proveedores;
             this.comboProveedor.DisplayMember = "dt_detalle_producto.nombre_proveedor_detalle";
+            this.comboProveedor.DropDownHeight = 100;
             this.comboProveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboProveedor.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.comboProveedor.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -240,18 +239,18 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txt_nombre_nuevo_producto;
+        private System.Windows.Forms.TextBox txt_nombre_contacto;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox comboProveedor;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txt_numero_telefono;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txt_numero_celular;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_correo_electronico;
         private System.Windows.Forms.Label label3;
         private DataSets.ds_detalle_proveedores ds_detalle_proveedores;
     }
