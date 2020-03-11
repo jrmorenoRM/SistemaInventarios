@@ -52,6 +52,14 @@ namespace SistemaDeInventarios.Ventanas
             }
         }
 
+        public void LimpiarTextboxs()
+        {
+            txt_nombre_contacto.Clear();
+            txt_correo_electronico.Clear();
+            txt_numero_celular.Clear();
+            txt_numero_telefono.Clear();
+        }
+
         #endregion
 
         #region BOTONES
@@ -106,10 +114,8 @@ namespace SistemaDeInventarios.Ventanas
             {
                 pg_comando.ExecuteNonQuery();
                 MessageBox.Show("NUEVO PROVEEDOR AGREGADO.");
-                txt_nombre_contacto.Clear();
-                txt_correo_electronico.Clear();
-                txt_numero_celular.Clear();
-                txt_numero_telefono.Clear();
+                LimpiarTextboxs();
+                
 
             }
             catch (Exception ex)

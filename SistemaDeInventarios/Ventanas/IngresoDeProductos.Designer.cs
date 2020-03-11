@@ -47,6 +47,8 @@
             this.comboGrupoSeleccionado = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.txt_codigo_de_barras = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ds_grupo_productos1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ds_detalle_productos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -168,6 +170,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Window;
+            this.panel1.Controls.Add(this.txt_codigo_de_barras);
+            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.txt_nombre_nuevo_producto);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
@@ -194,7 +198,7 @@
             // txt_nombre_nuevo_producto
             // 
             this.txt_nombre_nuevo_producto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txt_nombre_nuevo_producto.Location = new System.Drawing.Point(297, 163);
+            this.txt_nombre_nuevo_producto.Location = new System.Drawing.Point(314, 198);
             this.txt_nombre_nuevo_producto.Name = "txt_nombre_nuevo_producto";
             this.txt_nombre_nuevo_producto.Size = new System.Drawing.Size(293, 20);
             this.txt_nombre_nuevo_producto.TabIndex = 30;
@@ -229,7 +233,7 @@
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::SistemaDeInventarios.Properties.Resources.SIGNO_MAS;
-            this.pictureBox1.Location = new System.Drawing.Point(596, 203);
+            this.pictureBox1.Location = new System.Drawing.Point(613, 238);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(24, 24);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -246,7 +250,7 @@
             this.comboGrupoSeleccionado.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.comboGrupoSeleccionado.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboGrupoSeleccionado.FormattingEnabled = true;
-            this.comboGrupoSeleccionado.Location = new System.Drawing.Point(297, 198);
+            this.comboGrupoSeleccionado.Location = new System.Drawing.Point(314, 233);
             this.comboGrupoSeleccionado.Name = "comboGrupoSeleccionado";
             this.comboGrupoSeleccionado.Size = new System.Drawing.Size(293, 30);
             this.comboGrupoSeleccionado.TabIndex = 8;
@@ -257,7 +261,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(41, 159);
+            this.label7.Location = new System.Drawing.Point(58, 194);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(207, 22);
             this.label7.TabIndex = 6;
@@ -267,11 +271,29 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(41, 205);
+            this.label2.Location = new System.Drawing.Point(58, 240);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 22);
             this.label2.TabIndex = 1;
             this.label2.Text = "GRUPO:";
+            // 
+            // txt_codigo_de_barras
+            // 
+            this.txt_codigo_de_barras.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txt_codigo_de_barras.Location = new System.Drawing.Point(314, 159);
+            this.txt_codigo_de_barras.Name = "txt_codigo_de_barras";
+            this.txt_codigo_de_barras.Size = new System.Drawing.Size(293, 20);
+            this.txt_codigo_de_barras.TabIndex = 32;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(58, 155);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(208, 22);
+            this.label3.TabIndex = 31;
+            this.label3.Text = "CODIGO DE BARRAS:";
             // 
             // IngresoDeProductos
             // 
@@ -321,5 +343,7 @@
         private System.Windows.Forms.ComboBox comboGrupoSeleccionado;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txt_codigo_de_barras;
+        private System.Windows.Forms.Label label3;
     }
 }

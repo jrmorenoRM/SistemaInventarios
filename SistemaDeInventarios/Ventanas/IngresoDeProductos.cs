@@ -24,30 +24,13 @@ namespace SistemaDeInventarios
             CargarGrupoPruductos();
         }
 
-        private void Button1_Click(object sender, EventArgs e)
-        {
-           
-        }
+       
 
         private void Panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void NumericUpDown1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label4_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void Button2_Click(object sender, EventArgs e)
         {
@@ -67,18 +50,21 @@ namespace SistemaDeInventarios
 
             string query = @"SELECT * FROM public.ft_insert_nuevo_producto_detalle (
                                                                                     :p_nombre_producto,
-                                                                                    :p_id_de_grupo 
-                                                                                   )";
+                                                                                    :p_id_de_grupo,
+                                                                                    :p_codigo_barras
+                                                                                                        )";
 
             PgSqlCommand pg_comando = new PgSqlCommand(query, pro_conexion);
             pg_comando.Parameters.Add("p_id_de_grupo", PgSqlType.Int).Value = combodetalleproducto;
             pg_comando.Parameters.Add("p_nombre_producto", PgSqlType.VarChar).Value = txt_nombre_nuevo_producto.Text; // solo si hay parametros en la funcion sql
-                   
+            pg_comando.Parameters.Add("p_codigo_barras", PgSqlType.VarChar).Value = txt_codigo_de_barras.Text;
+
             try
                    {
                        pg_comando.ExecuteNonQuery(); //executenonquery cuando no necesitamos retornar un valor
                        MessageBox.Show("Producto guardado con exito.");
                        txt_nombre_nuevo_producto.Clear();
+                       txt_codigo_de_barras.Clear();
 
                     }
                    catch (Exception ex)
